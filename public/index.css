@@ -71,10 +71,15 @@ h2 {
   border-bottom: 1px solid #e9e9e9;
   color: #555;
 }
+.chat__output-user {
+  color: #575ed8;
+  font-weight: bold;
+}
 .chat__feedback-text {
   color: #aaa;
   padding: 14px 0px;
   margin: 0 20px;
+  font-style: italic;
 }
 .chat__button {
   background: #575ed8;
@@ -84,4 +89,5 @@ h2 {
   padding: 12px 0;
   width: 100%;
   border-radius: 0 0 2px 2px;
+  cursor: pointer;
 }

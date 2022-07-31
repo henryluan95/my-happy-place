@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "sass": "^1.54.0"
+    "sass": "^1.54.0",
+    "socket.io": "^4.5.1"
   },
   "name": "nicestplaceonearth",
   "version": "1.0.0",

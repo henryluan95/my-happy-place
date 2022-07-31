@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nicest Place On Earth</title>
+    <title>My Happy Place</title>
     <link rel="stylesheet" href="./index.css" />
+    <script
+      src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+      integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="view">
@@ -22,19 +27,14 @@
       </div>
       <div class="view__chat chat">
         <div class="chat__box">
-          <h2>Nicest Place On Earth</h2>
+          <h2>My Happy Place</h2>
           <div class="chat__window">
             <div class="chat__output"></div>
             <div class="chat__feedback"></div>
           </div>
-          <input
-            class="input handle"
-            id="handle"
-            type="text"
-            placeholder="Handle"
-          />
+          <input class="input user" type="text" placeholder="Your Name" />
           <input class="input message" type="text" placeholder="Message" />
-          <button class="chat__button">Send</button>
+          <button class="chat__button">Send Love 🧡</button>
         </div>
         <iframe
           width="100%"
@@ -46,5 +46,6 @@
         ></iframe>
       </div>
     </div>
+    <script src="./chat.js"></script>
   </body>
 </html>
