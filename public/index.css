@@ -104,6 +104,40 @@ h2 {
   width: 100%;
   border-radius: 0 0 2px 2px;
   cursor: pointer;
+  position: relative;
+}
+.chat__info {
+  font-size: 0.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.chat__info::after {
+  content: "This project is inspired by `The nicest place on the internet` created by Lauren Perlow & Jeff Lam";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-120%, -50%);
+  border: 1px solid white;
+  background: rgba(170, 170, 170, 0.533);
+  border-radius: 10px;
+  min-width: 11rem;
+  padding: 0.5rem;
+  text-align: center;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+.chat__info:hover::after {
+  opacity: 1;
 }
 .chat__music {
   width: 100%;
