@@ -1,10 +1,15 @@
 const express = require("express");
 const socket = require("socket.io");
+const dotenv = require("dotenv");
+
+// Set up port
+dotenv.config();
+const PORT = process.env.PORT ?? 4000;
 
 // App setup
 const app = express();
-const server = app.listen(4000, function () {
-  console.log("listening for requests on port 4000 🚀");
+const server = app.listen(PORT, function () {
+  console.log(`listening for requests on port ${PORT} 🚀`);
 });
 
 // Static files
