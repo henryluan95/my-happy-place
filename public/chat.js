@@ -1,6 +1,5 @@
 // Make connection
-// const socket = io.connect();
-const socket = io();
+const socket = io.connect();
 
 // Query DOM
 const message = document.querySelector(".message");
