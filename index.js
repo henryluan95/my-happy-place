@@ -1,22 +1,17 @@
 const express = require("express");
-const socket = require("socket.io");
+const app = express();
 const dotenv = require("dotenv");
+const http = require("http");
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
 // Set up port
 dotenv.config();
 const PORT = process.env.PORT ?? 4000;
 
-// App setup
-const app = express();
-const server = app.listen(PORT, function () {
-  console.log(`listening for requests on port ${PORT} 🚀`);
-});
-
 // Static files
 app.use(express.static("public"));
-
-// Socket setup
-const io = socket(server);
 
 io.on("connection", (socket) => {
   console.log("made socket connection", socket.id);
@@ -31,4 +26,8 @@ io.on("connection", (socket) => {
   socket.on("typing", (data) => {
     socket.broadcast.emit("typing", data);
   });
+});
+
+server.listen(PORT, () => {
+  console.log(`listening for requests on port ${PORT} 🚀`);
 });

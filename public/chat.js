@@ -1,5 +1,6 @@
 // Make connection
-const socket = io.connect("http://localhost:4000");
+// const socket = io.connect("http://localhost:4000/");
+const socket = io();
 
 // Query DOM
 const message = document.querySelector(".message");
