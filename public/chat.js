@@ -1,18 +1,16 @@
-const e = require("express");
-
 // Make connection
 const socket = io.connect("http://localhost:4000");
 
 // Query DOM
 const message = document.querySelector(".message");
 const user = document.querySelector(".user");
-const btn = document.querySelector(".chat__button");
 const output = document.querySelector(".chat__output");
 const feedback = document.querySelector(".chat__feedback");
+const chatbox = document.querySelector(".chat__box");
 
 // Chat event
 // Step 1: Handle chat event - send message down to the server
-btn.addEventListener("click", () => {
+chatbox.addEventListener("submit", (e) => {
   e.preventDefault();
 
   //send message down to the sever
@@ -34,7 +32,7 @@ socket.on("chat", (data) => {
 // Typing event
 // Handle typing in the input field
 message.addEventListener("keypress", () => {
-  socket.emit("typing", handle.value);
+  socket.emit("typing", user.value);
 });
 
 socket.on("typing", (data) => {
