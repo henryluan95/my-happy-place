@@ -13,20 +13,39 @@ const chatbox = document.querySelector(".chat__box");
 chatbox.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  //send message down to the sever
-  socket.emit("chat", {
-    message: message.value,
-    user: user.value,
-  });
-
-  //empty out input field
-  message.value = "";
+  // Send message down to the sever
+  // Validation
+  if (message.value && user.value) {
+    //remove error state
+    message.classList.remove("message--error");
+    user.classList.remove("user--error");
+    //send message
+    socket.emit("chat", {
+      message: message.value,
+      user: user.value,
+    });
+    //empty out input field
+    message.value = "";
+  } else {
+    if (!message.value) {
+      message.classList.add("message--error");
+    }
+    if (!user.value) {
+      user.classList.add("user--error");
+    }
+  }
 });
 
 // Step 2: Listen for chat events
 socket.on("chat", (data) => {
   feedback.innerHTML = "";
-  output.innerHTML += `<p class="chat__output-text"><span class="chat__output-user">${data.user}: </span>${data.message}</p>`;
+  if (data.user === user.value) {
+    output.innerHTML += `<p class="chat__output-text chat__output-text--sender"><span class="chat__output-user chat__output-user--sender ">${data.user}: </span>${data.message}</p>`;
+    window.scrollTo(0, document.body.scrollHeight);
+  } else {
+    output.innerHTML += `<p class="chat__output-text"><span class="chat__output-user">${data.user}: </span>${data.message}</p>`;
+    window.scrollTo(0, document.body.scrollHeight);
+  }
 });
 
 // Typing event
@@ -35,6 +54,13 @@ message.addEventListener("keypress", () => {
   socket.emit("typing", user.value);
 });
 
+// Listen for type event
 socket.on("typing", (data) => {
   feedback.innerHTML = `<p class="chat__feedback-text"> ${data} is typing a message...</p>`;
+});
+
+// Disconnect event
+socket.on("user disconnect", (data) => {
+  output.innerHTML += `<p class="chat__feedback-text">${data}</p>`;
+  window.scrollTo(0, document.body.scrollHeight);
 });

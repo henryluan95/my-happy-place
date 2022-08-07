@@ -12,12 +12,6 @@ body {
   margin: 0;
   padding: 0;
 }
-@media (min-width: 768px) {
-  body {
-    overflow: hidden;
-  }
-}
-
 h2 {
   font-size: 1.125rem;
   padding: 0.58rem 1.25rem;
@@ -43,6 +37,7 @@ h2 {
     justify-content: stretch;
     flex-direction: row;
     align-items: flex-start;
+    max-height: 100vh;
   }
 }
 .view__video {
@@ -85,9 +80,15 @@ h2 {
   border-bottom: 1px solid #e9e9e9;
   color: #555;
 }
+.chat__output-text--sender {
+  text-align: right;
+}
 .chat__output-user {
   color: #ff6723;
   font-weight: bold;
+}
+.chat__output-user--sender {
+  color: lightseagreen;
 }
 .chat__feedback-text {
   color: #aaa;
@@ -143,3 +144,8 @@ h2 {
   width: 100%;
   height: 4.3rem;
 }
+
+.message--error,
+.user--error {
+  border: 1px solid red;
+}/*# sourceMappingURL=index.css.map */

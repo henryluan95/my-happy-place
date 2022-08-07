@@ -13,18 +13,33 @@ const PORT = process.env.PORT ?? 4000;
 // Static files
 app.use(express.static("public"));
 
+// Store current user
+let user = "";
+
 io.on("connection", (socket) => {
   console.log("made socket connection", socket.id);
 
   // Handle chat event
   socket.on("chat", (data) => {
-    // console.log(data);
-    io.sockets.emit("chat", data);
+    io.to(socket.id).emit("chat", data);
+    user = data.user;
+  });
+
+  socket.on("chat", (data) => {
+    socket.broadcast.emit("chat", data);
   });
 
   // Handle typing event
   socket.on("typing", (data) => {
     socket.broadcast.emit("typing", data);
+  });
+
+  //Handle logout event
+  socket.on("disconnect", () => {
+    io.emit(
+      "user disconnect",
+      `${user || "An anonymous user"} is disconnected`
+    );
   });
 });
 

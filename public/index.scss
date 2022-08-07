@@ -16,7 +16,7 @@ body {
   padding: 0;
 
   @include tablet {
-    overflow: hidden;
+    // overflow: hidden;
   }
 }
 
@@ -47,6 +47,7 @@ h2 {
     justify-content: stretch;
     flex-direction: row;
     align-items: flex-start;
+    max-height: 100vh;
   }
 
   &__video {
@@ -95,11 +96,19 @@ h2 {
       margin: 0 1.25rem;
       border-bottom: 1px solid #e9e9e9;
       color: #555;
+
+      &--sender {
+        text-align: right;
+      }
     }
 
     &-user {
       color: #ff6723;
       font-weight: bold;
+
+      &--sender {
+        color: lightseagreen;
+      }
     }
   }
 
@@ -163,5 +172,12 @@ h2 {
   &__music {
     width: 100%;
     height: 4.3rem;
+  }
+}
+
+.message,
+.user {
+  &--error {
+    border: 1px solid red;
   }
 }
