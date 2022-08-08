@@ -36,10 +36,7 @@ io.on("connection", (socket) => {
 
   //Handle logout event
   socket.on("disconnect", () => {
-    io.emit(
-      "user disconnect",
-      `${user || "An anonymous user"} is disconnected`
-    );
+    io.emit("user disconnect", `${user || "Anonymous user"} is disconnected`);
   });
 });
 
