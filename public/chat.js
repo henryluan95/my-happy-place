@@ -56,7 +56,7 @@ message.addEventListener("keypress", () => {
 
 // Listen for type event
 socket.on("typing", (data) => {
-  feedback.innerHTML = `<p class="chat__feedback-text"> ${data} is typing a message...</p>`;
+  feedback.innerHTML += `<p class="chat__feedback-text"> ${data} is typing a message...</p>`;
 });
 
 // Disconnect event
