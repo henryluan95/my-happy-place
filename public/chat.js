@@ -17,22 +17,36 @@ chatbox.addEventListener("submit", (e) => {
   // Send message down to the sever
   // Validation
   if (message.value && user.value) {
+    // check username length
+    if (user.value > 30) {
+      user.classList.add("user--error");
+      user.placeholder = "Please enter a username (max: 30 characters)";
+    }
+
     //remove error state
     message.classList.remove("message--error");
     user.classList.remove("user--error");
+
+    //change placeholder back to default
+    message.placeholder = "Message";
+    user.placeholder = "Your Name";
+
     //send message
     socket.emit("chat", {
       message: message.value,
       user: user.value,
     });
+
     //empty out input field
     message.value = "";
   } else {
     if (!message.value) {
       message.classList.add("message--error");
+      message.placeholder = "Please enter a message";
     }
     if (!user.value) {
       user.classList.add("user--error");
+      user.placeholder = "Please enter a username (max: 30 characters)";
     }
   }
 });
