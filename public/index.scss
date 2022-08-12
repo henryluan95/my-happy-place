@@ -100,15 +100,25 @@ h2 {
       margin: 0 1.25rem;
       border-bottom: 1px solid #e9e9e9;
       color: #555;
+      overflow-wrap: anywhere;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
 
       &--sender {
         text-align: right;
+        align-items: flex-end;
       }
     }
 
     &-user {
       color: #ff6723;
       font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 10rem;
 
       &--sender {
         color: lightseagreen;
@@ -121,6 +131,7 @@ h2 {
     padding: 0.875rem 0px;
     margin: 0 1.25rem;
     font-style: italic;
+    overflow-wrap: anywhere;
   }
 
   &__button {

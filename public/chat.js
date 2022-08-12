@@ -41,10 +41,10 @@ chatbox.addEventListener("submit", (e) => {
 socket.on("chat", (data) => {
   feedback.innerHTML = "";
   if (data.user === user.value) {
-    output.innerHTML += `<p class="chat__output-text chat__output-text--sender"><span class="chat__output-user chat__output-user--sender ">${data.user}: </span>${data.message}</p>`;
+    output.innerHTML += `<p class="chat__output-text chat__output-text--sender"><span class="chat__output-user chat__output-user--sender ">${data.user}</span>${data.message}</p>`;
     chatOutput.scrollIntoView({ behavior: "smooth", block: "end" });
   } else {
-    output.innerHTML += `<p class="chat__output-text"><span class="chat__output-user">${data.user}: </span>${data.message}</p>`;
+    output.innerHTML += `<p class="chat__output-text"><span class="chat__output-user">${data.user}</span>${data.message}</p>`;
     chatOutput.scrollIntoView({ behavior: "smooth", block: "end" });
   }
 });
