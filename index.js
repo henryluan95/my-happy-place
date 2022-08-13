@@ -31,11 +31,15 @@ io.on("connection", (socket) => {
 
   // Handle typing event
   socket.on("typing", (data) => {
+    if (user !== data) {
+      user = data;
+    }
     socket.broadcast.emit("typing", data);
   });
 
   //Handle logout event
   socket.on("disconnect", () => {
+    console.log(user);
     io.emit("user disconnect", `${user || "Anonymous user"} is disconnected`);
   });
 });

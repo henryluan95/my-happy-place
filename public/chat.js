@@ -79,4 +79,5 @@ socket.on("typing", (data) => {
 socket.on("user disconnect", (data) => {
   output.innerHTML += `<p class="chat__feedback-text">${data}</p>`;
   chatOutput.scrollIntoView({ behavior: "smooth", block: "end" });
+  feedback.innerHTML = "";
 });
