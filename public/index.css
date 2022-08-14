@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 h2 {
   font-size: 1.125rem;
   padding: 0.58rem 1.25rem;
@@ -57,8 +58,8 @@ h2 {
 .chat__title {
   margin: 0;
   padding: 1.48rem;
-  background-color: black;
-  color: white;
+  background-color: #ecdfcd;
+  color: #454c4d;
   text-transform: uppercase;
   font-size: 1.3rem;
   text-align: center;
@@ -93,16 +94,16 @@ h2 {
   align-items: flex-end;
 }
 .chat__output-user {
-  color: #ff6723;
+  color: #a77d5d;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  width: 10rem;
+  width: 15rem;
 }
 .chat__output-user--sender {
-  color: lightseagreen;
+  color: #6f735c;
 }
 .chat__feedback-text {
   color: #aaa;
@@ -112,8 +113,8 @@ h2 {
   overflow-wrap: anywhere;
 }
 .chat__button {
-  background: black;
-  color: #fff;
+  background: #ecdfcd;
+  color: #454c4d;
   font-size: 1.125rem;
   border: 0;
   padding: 1rem 0;

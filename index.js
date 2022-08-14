@@ -18,6 +18,8 @@ let user = "";
 
 io.on("connection", (socket) => {
   console.log("made socket connection", socket.id);
+  // Handle login event
+  socket.broadcast.emit("user connect", `A new user is connected`);
 
   // Handle chat event
   socket.on("chat", (data) => {

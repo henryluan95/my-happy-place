@@ -75,6 +75,12 @@ socket.on("typing", (data) => {
   chatOutput.scrollIntoView({ behavior: "smooth", block: "end" });
 });
 
+// Connect event
+socket.on("user connect", (data) => {
+  output.innerHTML += `<p class="chat__feedback-text">${data}</p>`;
+  chatOutput.scrollIntoView({ behavior: "smooth", block: "end" });
+});
+
 // Disconnect event
 socket.on("user disconnect", (data) => {
   output.innerHTML += `<p class="chat__feedback-text">${data}</p>`;

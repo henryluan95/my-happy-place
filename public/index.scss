@@ -14,10 +14,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-
-  @include tablet {
-    // overflow: hidden;
-  }
 }
 
 h2 {
@@ -70,8 +66,8 @@ h2 {
   &__title {
     margin: 0;
     padding: 1.48rem;
-    background-color: black;
-    color: white;
+    background-color: #ecdfcd;
+    color: #454c4d;
     text-transform: uppercase;
     font-size: 1.3rem;
     text-align: center;
@@ -112,16 +108,16 @@ h2 {
     }
 
     &-user {
-      color: #ff6723;
+      color: #a77d5d;
       font-weight: bold;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       display: inline-block;
-      width: 10rem;
+      width: 15rem;
 
       &--sender {
-        color: lightseagreen;
+        color: #6f735c;
       }
     }
   }
@@ -135,8 +131,8 @@ h2 {
   }
 
   &__button {
-    background: black;
-    color: #fff;
+    background: #ecdfcd;
+    color: #454c4d;
     font-size: 1.125rem;
     border: 0;
     padding: 1rem 0;
