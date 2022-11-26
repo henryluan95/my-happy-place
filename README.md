@@ -2,8 +2,6 @@
 
 My happy place on earth is a project that I built while learning Socket.io. This project is inspired by The Nicest Place On The Internet. It features videos of strangers hugging their cameras with soft music playing in the background. It also includes a chatbox for strangers to send encouraging messages to others.  
 
-Please click here for the live website: https://my-happy-place-on-earth.herokuapp.com/
-
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ## Project Screenshot
